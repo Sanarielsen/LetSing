@@ -9,7 +9,12 @@
 }
 
 body {
+  height: 100vh;
   background: #18181b;
-  color: #FAFAFA;
-  -webkit-font-smoothing: antialiased;
+  color: #FAFAFA;  
+  -webkit-font-smoothing: antialiased;  
+}
+
+#__next {
+  height: 100%;
 }

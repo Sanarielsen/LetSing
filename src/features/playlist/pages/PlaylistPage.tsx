@@ -1,10 +1,13 @@
 import PlaylistMusics from "../components/PlaylistMusics";
+import MenuContainer from "@/components/MenuContainer";
 
 export default function PlaylistPage() {
 
-  return (
-    <main>
-      <PlaylistMusics />
-    </main>
+  return (        
+    <MenuContainer>
+      <main>
+        <PlaylistMusics />
+      </main>
+    </MenuContainer>    
   );
 }
