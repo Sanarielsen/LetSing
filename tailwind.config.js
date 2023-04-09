@@ -12,9 +12,13 @@ module.exports = {
     extend: {
       colors: {
         'pachi-gray': '#A7A8A5',
+        'pachi-gray-header': '#27272a',
         'pachi-green': '#00FF00',
         'pachi-red': '#dc2626',
         'pachi-yellow': '#f59e0b',
+      },
+      transitionProperty: {
+        'width': 'width'
       },
       borderRadius: {
 
