@@ -8,6 +8,6 @@ export default function PlaylistPage() {
       <main>
         <PlaylistMusics />
       </main>
-    </MenuContainer>    
+    </MenuContainer>
   );
 }
