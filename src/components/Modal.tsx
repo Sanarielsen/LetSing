@@ -30,7 +30,7 @@ export const Modal = forwardRef<Ref, Props>((props, ref) => {
           <Title>
             {props.title}
           </Title>
-          <div ref={ref as ForwardedRef<HTMLDivElement>}>
+          <div>
 
             {props.children[1]}
           </div>
