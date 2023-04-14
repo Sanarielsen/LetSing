@@ -1,4 +1,5 @@
 import { Modal } from "@/components/Modal"
+import { Plus } from "phosphor-react";
 import { useRef, useState } from "react"
 import { useForm, SubmitHandler } from "react-hook-form";
 
@@ -12,10 +13,17 @@ interface ParticipantCreateModalProps {
 
 export default function ParticipantCreateModal({ open, title, onOpenChange }: ParticipantCreateModalProps) {
 
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register } = useForm<Participant>();
 
   const [modal, setModal] = useState(false);
-  const refModalFile = useRef<HTMLButtonElement>(null)
+  const refButtonActivate = useRef<HTMLButtonElement>(null)
+  const refPanel = useRef<HTMLDivElement>(null)
+
+  const handleActiveModal = () => {
+  
+    console.log("handleActiveModal()");
+    setModal(!modal);
+  }
 
   const handleFormSubmit: SubmitHandler<Participant> = (data) => {
 
@@ -27,15 +35,14 @@ export default function ParticipantCreateModal({ open, title, onOpenChange }: Pa
       open={open}
       title={title}
       handleOpenChange={onOpenChange}
-      ref={refModalFile}           
+      ref={refButtonActivate}
     >
       <button
         type="button"
-        onClick={() => setModal(true)}               
-      >
-        Adicionar participante
+        className="p-3 m-3 bg-neutral-700 rounded-md border hover:border-pachi-green first:hover:text-pachi-green" 
+        onClick={handleActiveModal}><Plus size={24} />
       </button>
-
+      
       <div className="dialogBody">
         <form onSubmit={handleSubmit(handleFormSubmit)}>
           <input 

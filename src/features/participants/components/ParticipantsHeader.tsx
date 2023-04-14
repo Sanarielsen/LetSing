@@ -1,6 +1,10 @@
 import { Plus } from "phosphor-react";
+import ParticipantCreateModal from "./ParticipantCreateModal";
+import { useState } from "react";
 
 export default function ParticipantsHeader() {
+
+  const [modalCreate, setModalCreate] = useState(false);
 
   const handleAddParticipant = () => {
 
@@ -14,7 +18,12 @@ export default function ParticipantsHeader() {
       </div>
       <div className="flex justify-end basis-1/2">
         <div>
-          <button className="p-3 m-3 bg-neutral-700 rounded-md border hover:border-pachi-green first:hover:text-pachi-green" onClick={handleAddParticipant}><Plus size={24} /></button>
+          <ParticipantCreateModal 
+            open={modalCreate}
+            title="Adicionar Participante"
+            onOpenChange={() => {setModalCreate(!modalCreate)}}
+            onSubmitModal={() => {handleAddParticipant}}
+          />
         </div>
       </div>
     </div>
